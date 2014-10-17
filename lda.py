@@ -4,8 +4,8 @@ id2word = gensim.corpora.Dictionary.load('imgur_comments.dict')
 
 mm = gensim.corpora.MmCorpus('imgur_comments.mm')
 
-lsi = gensim.models.lsimodel.LsiModel(corpus=mm, id2word=id2word, num_topics=1)
+lda= gensim.models.ldamodel.LdaModel(corpus=mm, id2word=id2word, num_topics=10, update_every=0, passes=100)
 
-t = lsi.print_topics(1)
+t = lda.print_topics(10)
 for i, topic in enumerate(t):
 	print "Topic #%s: %s\n" % (i, topic)

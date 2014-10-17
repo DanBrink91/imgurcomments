@@ -1,7 +1,7 @@
 from gensim import corpora, models, similarities
 import json
 
-comment_json = json.loads(open("comments.json", "rb").read())
+comment_json = json.loads(open("comments2.json", "rb").read())
 comments = [caption['caption'] for caption in comment_json['data']['captions']]
 
 stop_words = open("stopwords.txt", "rb").read()
